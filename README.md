@@ -162,7 +162,7 @@ Available targets:
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_dns"></a> [dns](#module\_dns) | cloudposse/route53-alias/aws | 0.12.0 |
-| <a name="module_logs"></a> [logs](#module\_logs) | cloudposse/s3-log-storage/aws | 0.20.0 |
+| <a name="module_logs"></a> [logs](#module\_logs) | cloudposse/s3-log-storage/aws | 0.21.0 |
 | <a name="module_origin_label"></a> [origin\_label](#module\_origin\_label) | cloudposse/label/null | 0.24.1 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.24.1 |
 
@@ -265,6 +265,7 @@ Like this project? Please give it a ★ on [our GitHub](https://github.com/cloud
 Are you using this project or any of our other projects? Consider [leaving a testimonial][testimonial]. =)
 
 
+
 ## Related Projects
 
 Check out these related projects.
@@ -274,8 +275,6 @@ Check out these related projects.
 - [terraform-aws-cloudtrail](https://github.com/cloudposse/terraform-aws-cloudtrail) - Terraform module to provision an AWS CloudTrail and an encrypted S3 bucket with versioning to store CloudTrail logs
 - [terraform-aws-s3-website](https://github.com/cloudposse/terraform-aws-s3-website) - Terraform module to provision S3-backed websites
 - [terraform-root-modules/aws/docs](https://github.com/cloudposse/terraform-root-modules/tree/master/aws/docs) - Reference implementation combining `terraform-aws-s3-website` with `terraform-aws-cdn`
-
-
 
 ## Help
 
