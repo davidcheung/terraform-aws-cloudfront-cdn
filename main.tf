@@ -99,16 +99,16 @@ resource "aws_cloudfront_distribution" "default" {
       dynamic "custom_origin_config" {
         for_each = lookup(origin.value, "custom_origin_config", null) == null ? [] : [true]
         content {
-          http_port                = lookup(origin.value.custom_origin_config, "http_port", null)
-          https_port               = lookup(origin.value.custom_origin_config, "https_port", null)
-          origin_protocol_policy   = lookup(origin.value.custom_origin_config, "origin_protocol_policy", "https-only")
-          origin_ssl_protocols     = lookup(origin.value.custom_origin_config, "origin_ssl_protocols", ["TLSv1.2"])
-          origin_keepalive_timeout = lookup(origin.value.custom_origin_config, "origin_keepalive_timeout", 60)
-          origin_read_timeout      = lookup(origin.value.custom_origin_config, "origin_read_timeout", 60)
+          http_port                 = origin.value.custom_origin_config.http_port
+          https_port                = origin.value.custom_origin_config.https_port
+          origin_protocol_policy    = origin.value.custom_origin_config.origin_protocol_policy
+          origin_ssl_protocols      = origin.value.custom_origin_config.origin_ssl_protocols
+          origin_keepalive_timeout  = origin.value.custom_origin_config.origin_keepalive_timeout
+          origin_read_timeout       = origin.value.custom_origin_config.origin_read_timeout
         }
       }
       dynamic "s3_origin_config" {
-        for_each = lookup(origin.value, "s3_origin_config", null) == null ? [] : [true]
+        for_each = lookup(origin.value.s3_origin_config, "origin_access_identity", null) == null ? [] : [true]
         content {
           origin_access_identity = lookup(origin.value.s3_origin_config, "origin_access_identity", null)
         }
